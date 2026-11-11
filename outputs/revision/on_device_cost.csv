@@ -1,0 +1,9 @@
+component,floats,kB_float64,kB_float32
+model_and_calibration,34,0.265625,0.1328125
+novelty_stats,62,0.484375,0.2421875
+anchor,1240,9.6875,4.84375
+buffer,3100,24.21875,12.109375
+background_negatives,21700,169.53125,84.765625
+reference_negatives_for_calibration,9300,72.65625,36.328125
+verified_for_recalibration,620,4.84375,2.421875
+TOTAL,36056,281.6875,140.84375

@@ -1,0 +1,301 @@
+{
+ "default_cfg": {
+  "n_enroll": 40,
+  "n_cal": 10,
+  "n_bg": 50,
+  "q": 0.2,
+  "sigma": 3.0,
+  "clip": 1.0,
+  "delta": 1e-05,
+  "lr": 0.05,
+  "l2": 0.001,
+  "init_steps": 150,
+  "upd_steps": 25,
+  "buffer_cap": 100,
+  "W": 10,
+  "tau_acc": 0.5,
+  "tau_upd": 0.8,
+  "rho": 0.8,
+  "m_min": 5,
+  "trust_q": 0.95,
+  "eps_budget": 8.0,
+  "burst": 10,
+  "attack_holdout": 0.3,
+  "p_gen_pass": 1.0,
+  "p_att_pass": 0.0,
+  "recal_verified": 20,
+  "adapt_step_up": 0.15,
+  "adapt_step_down": 0.1,
+  "n_leak": 5,
+  "probe_per_subject": 20
+ },
+ "methods": {
+  "B0_static": {
+   "adaptive": false,
+   "dp": false,
+   "silent": "none",
+   "labels": false,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B0_static_DP": {
+   "adaptive": false,
+   "dp": true,
+   "silent": "none",
+   "labels": false,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B1_selfupdate": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "all",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B1b_double_thr": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "double",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B1c_labels_only": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "none",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B2_DP_selfupdate": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "all",
+   "labels": true,
+   "budget": true,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B2c_DP_labels_only": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "none",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B3_gate_nonDP": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "risk",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "P_gate_DP_budget": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_budget": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_pacing": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": false,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_novelty": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": false,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_evidence": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": false,
+   "calib": true
+  },
+  "A_P_no_calib": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": true,
+   "calib": false
+  },
+  "B2p_DP_selfupdate_paced": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "all",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B3p_gate_sched": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": true,
+   "calib": true,
+   "sched": true
+  },
+  "B1c_audit5": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "none",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true,
+   "audit": 0.05
+  },
+  "B1c_labels_only_grace": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "none",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true,
+   "grace": true
+  },
+  "B2c_DP_labels_only_grace": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "none",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": false,
+   "evidence": false,
+   "calib": true,
+   "grace": true
+  },
+  "P_gate_DP_budget_grace": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": true,
+   "calib": true,
+   "grace": true
+  }
+ },
+ "conditions": {
+  "C0_drift_only": [
+   "none",
+   0.0
+  ],
+  "C1_zero_effort_10": [
+   "zero",
+   0.1
+  ],
+  "C2_zero_effort_30": [
+   "zero",
+   0.3
+  ],
+  "C3_confaware_oracle_20": [
+   "oracle",
+   0.2
+  ],
+  "C4_greybox_feedback_20": [
+   "adaptive",
+   0.2
+  ],
+  "C3n_oracle_motornoise_20": [
+   "oracle_noisy",
+   0.2
+  ],
+  "C5_gateaware_20": [
+   "gate_aware",
+   0.2
+  ],
+  "C6_generative_20": [
+   "generative",
+   0.2
+  ],
+  "C3s_oracle_strong_40": [
+   "oracle",
+   0.4
+  ],
+  "H_handover_sessionstart": [
+   "handover",
+   0.0
+  ]
+ }
+}

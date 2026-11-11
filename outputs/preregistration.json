@@ -1,0 +1,250 @@
+{
+ "frozen_at": "2026-11-10T22:23:09.387571+00:00",
+ "config": {
+  "n_enroll": 40,
+  "n_cal": 10,
+  "n_bg": 50,
+  "q": 0.2,
+  "sigma": 3.0,
+  "clip": 1.0,
+  "delta": 1e-05,
+  "lr": 0.05,
+  "l2": 0.001,
+  "init_steps": 150,
+  "upd_steps": 25,
+  "buffer_cap": 100,
+  "W": 10,
+  "tau_acc": 0.5,
+  "tau_upd": 0.8,
+  "rho": 0.8,
+  "m_min": 5,
+  "trust_q": 0.95,
+  "eps_budget": 8.0,
+  "burst": 10,
+  "attack_holdout": 0.3,
+  "p_gen_pass": 1.0,
+  "p_att_pass": 0.0,
+  "recal_verified": 20,
+  "adapt_step_up": 0.15,
+  "adapt_step_down": 0.1,
+  "n_leak": 5,
+  "probe_per_subject": 20
+ },
+ "methods": {
+  "B0_static": {
+   "adaptive": false,
+   "dp": false,
+   "silent": "none",
+   "labels": false,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B0_static_DP": {
+   "adaptive": false,
+   "dp": true,
+   "silent": "none",
+   "labels": false,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B1_selfupdate": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "all",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B1b_double_thr": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "double",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B1c_labels_only": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "none",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B2_DP_selfupdate": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "all",
+   "labels": true,
+   "budget": true,
+   "pacing": false,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B2c_DP_labels_only": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "none",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": false,
+   "evidence": false,
+   "calib": true
+  },
+  "B3_gate_nonDP": {
+   "adaptive": true,
+   "dp": false,
+   "silent": "risk",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "P_gate_DP_budget": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_budget": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": false,
+   "pacing": false,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_pacing": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": false,
+   "novelty": true,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_novelty": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": false,
+   "evidence": true,
+   "calib": true
+  },
+  "A_P_no_evidence": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": false,
+   "calib": true
+  },
+  "A_P_no_calib": {
+   "adaptive": true,
+   "dp": true,
+   "silent": "risk",
+   "labels": true,
+   "budget": true,
+   "pacing": true,
+   "novelty": true,
+   "evidence": true,
+   "calib": false
+  }
+ },
+ "conditions": {
+  "C0_drift_only": [
+   "none",
+   0.0
+  ],
+  "C1_zero_effort_10": [
+   "zero",
+   0.1
+  ],
+  "C2_zero_effort_30": [
+   "zero",
+   0.3
+  ],
+  "C3_confaware_oracle_20": [
+   "oracle",
+   0.2
+  ],
+  "C4_greybox_feedback_20": [
+   "adaptive",
+   0.2
+  ]
+ },
+ "seeds_main": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "seeds_sensitivity": [
+  0,
+  1
+ ],
+ "pilot_seed_excluded": 999,
+ "partition": {
+  "bg_train": 14,
+  "bg_cal": 6,
+  "attackers": 11,
+  "victims": 20
+ },
+ "primary": {
+  "endpoint": "attack_gain = PSR_final(C3_confaware_oracle_20) - PSR_final(C0_drift_only), per victim & seed",
+  "comparison": "P_gate_DP_budget vs B1_selfupdate",
+  "test": "two-sided Wilcoxon signed-rank over subjects (seed-averaged)",
+  "alpha": 0.05,
+  "ci": "95% subject-cluster bootstrap"
+ },
+ "secondary_family_holm": [
+  "H1a B0_static_DP vs B0_static ckpt_EER_late C0",
+  "H1b P vs B3 ckpt_EER_late C0",
+  "H3 P vs B0_static online_FRR C0",
+  "H4a B3 vs B1 gain",
+  "H4b P vs B2 gain",
+  "H4c P vs B3 gain",
+  "H4d interaction (B2-P)-(B1-B3) gain",
+  "H5a P vs B2c online_FRR C0",
+  "H5b P vs B2c gain",
+  "H5c B3 vs B1c online_FRR C0",
+  "H5d B3 vs B1c gain"
+ ],
+ "practical_margin_pp": 5
+}

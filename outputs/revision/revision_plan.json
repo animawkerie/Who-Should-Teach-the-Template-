@@ -1,0 +1,90 @@
+{
+ "written_utc": "2026-11-10T22:33:21.534502+00:00",
+ "status": "post hoc relative to the original plan; written before any revision run; no external timestamp",
+ "margin": 0.05,
+ "margin_rationale": "5 pp is the pre-registered practical margin; it is also of the order of the static verifier's late impostor acceptance (0.068), so a smaller change in attacker acceptance would not alter a deployment decision.",
+ "analyses": {
+  "R-OP": "Operating point: CORE policies at fixed tau_acc (FRR at matched probe FAR 1/5/10%, per-run DET), and KEY policies with tau_acc re-selected after every (re)fit so that FAR on the public reference set equals 2/5/10%. Endpoints: online challenge rate (C0), realised late probe FAR, attack gain (C3). Tests: P-B0, B1c-B0, P-B1c challenge rate, Holm within target.",
+  "R-PRIM": "Primary contrast: TOST (+-margin) on gain(P)-gain(B1) under C3; replication on 5 new partitions (seeds 5-9) and pooled 10 partitions; stronger attack C3s (40%, bursts x2) where B1 gain exceeds the MDE.",
+  "R-STEP": "Step-up realism: attack gain, attacker admissions and genuine lock-outs for STEP_POL across p_att in P_ATT (p_gen=1) and p_gen in P_GEN (p_att in {0,0.05}), under C2 (natural, label-seeking) and C3 (crafted). Handover after sign-in with per-sample vs trust-window (G=10) labels. Selection-effect control B1c_audit5.",
+  "R-ATT": "Attack suite: CORE policies under C3n (motor noise), C5 (gate-aware), C6 (generative), C3s (strong).",
+  "R-SF": "Single-factor contrasts: B1c-B1 (silent admission), B3-B1 (gate, no DP), P-B2p (gate | DP, same budget+pacing), P-B3p (DP | gate, same schedule), B2-B1 (DP+budget); attack gain under C3, C3s, C5; Holm within attack.",
+  "R-PRIV": "Participant- and record-level MIA on final adaptive models (C0); template recovery from leaked novelty statistics; update-log side channel AUC; composition across K=20 released models and utility at the population-calibrated sigma.",
+  "R-GEN": "Random-Fourier-feature verifier (D=256, pilot-tuned); drift regimes (practice effect removed; matched-magnitude random walk); Touchalytics with the strong attack; analytic on-device cost."
+ },
+ "seeds": {
+  "main": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "replication": [
+   5,
+   6,
+   7,
+   8,
+   9
+  ]
+ },
+ "core": [
+  "B0_static",
+  "B1_selfupdate",
+  "B1b_double_thr",
+  "B1c_labels_only",
+  "B2_DP_selfupdate",
+  "B2p_DP_selfupdate_paced",
+  "B2c_DP_labels_only",
+  "B3_gate_nonDP",
+  "B3p_gate_sched",
+  "P_gate_DP_budget"
+ ],
+ "key": [
+  "B0_static",
+  "B1_selfupdate",
+  "B1c_labels_only",
+  "B2c_DP_labels_only",
+  "B3_gate_nonDP",
+  "P_gate_DP_budget"
+ ],
+ "step_pol": [
+  "B1_selfupdate",
+  "B1c_labels_only",
+  "B2c_DP_labels_only",
+  "B3_gate_nonDP",
+  "P_gate_DP_budget"
+ ],
+ "hand_pol": [
+  "B1_selfupdate",
+  "B1c_labels_only",
+  "B1c_labels_only_grace",
+  "B2c_DP_labels_only",
+  "B2c_DP_labels_only_grace",
+  "P_gate_DP_budget",
+  "P_gate_DP_budget_grace"
+ ],
+ "p_att": [
+  0.0,
+  0.01,
+  0.05,
+  0.1,
+  0.2,
+  1.0
+ ],
+ "p_gen": [
+  1.0,
+  0.95,
+  0.9
+ ],
+ "far_targets": [
+  0.02,
+  0.05,
+  0.1
+ ],
+ "new_attacks": [
+  "C3n_oracle_motornoise_20",
+  "C5_gateaware_20",
+  "C6_generative_20"
+ ]
+}

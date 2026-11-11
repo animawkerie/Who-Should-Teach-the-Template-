@@ -1,0 +1,5 @@
+comparison,n_subjects,mean_diff,ci_lo,ci_hi,median_diff,n_pos,n_neg,n_zero,wilcoxon_W,p_value,rank_biserial,p_holm,family,interpretation
+handover gain: B1c(trust window) - B1c(per-sample),47,0.36867612292978724,0.3055393026030851,0.42661236701829786,0.4138888889,46,1,0,21.5,9.403988029078197e-09,0.9618794326241135,1.8807976058156393e-08,handover / selection,practically significant (CI beyond margin)
+handover gain: P(trust window) - P,47,0.3510195035489362,0.2762810283777128,0.4294485076859573,0.325,45,2,0,11.5,5.00730660423977e-09,0.9796099290780141,1.502191981271931e-08,handover / selection,practically significant (CI beyond margin)
+selection: late EER B1c_audit5 - B1c (C0),47,-0.0053354018936170216,-0.007516326842765959,-0.003392361116489363,-0.0044444444,10,34,3,106.5,5.770130846170806e-06,-0.7848484848484848,5.770130846170806e-06,handover / selection,significant but negligible (CI within margin)
+selection: challenge B1c_audit5 - B1c (C0),47,0.04330293820000001,0.04200101318494681,0.04453406789085106,0.0428571429,47,0,0,0.0,2.2622891424215373e-09,1.0,9.049156569686149e-09,handover / selection,significant but negligible (CI within margin)

@@ -1,0 +1,10 @@
+claim,evidence,status
+Adaptation reduces friction at a fixed probability threshold (H3),challenge B0 0.354 -> P 0.070,"holds, but mostly a threshold shift"
+"P reduces friction at matched, revalidated FAR","5% target: B0 0.373, P 0.287, B1c 0.198; P-B1c +0.089",holds (smaller); non-private adaptation reduces friction twice as much
+P matches the static verifier at matched oracle FAR,"FRR@5%FAR P-B0 +0.032 [-0.027, 0.094]",no improvement in separability under DP
+Silent gate (with DP) reduces poisoning vs naive self-update,"original C3 -0.034 (TOST p=0.066); pooled C3 -0.028 (TOST p=0.031); pooled C3s -0.057 [-0.097, -0.017]",small partial effect; grows with attack strength
+Labels-only updating is robust,C2 gain at p_att 0/5/10/20%: 0.008/0.024/0.046/0.098; trust-window handover +0.369,conditional: per-sample labels and p_att <= ~5%
+Gate effect isolated under DP (P-B2p),"C3s -0.078 [-0.141, -0.015]",present under strong attack; masked by pacing confound in original H4b
+DP lowers participant-level leakage of adaptive models,MIA AUC P 0.544 vs B3 0.590,holds (background cohort only)
+Non-private auxiliary state is harmless,samples from leaked novelty stats accepted at 0.992 (P),false: novelty statistics are a usable template
+Per-model eps <= 8 is a population guarantee,K=20 composition: eps(enrolment) = 24.2,false; per-model only

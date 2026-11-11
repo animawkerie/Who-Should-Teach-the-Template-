@@ -1,0 +1,16 @@
+method,observable,AUC_attack_vs_none,spearman_median
+B1_selfupdate,n_updates,1.0,
+B1_selfupdate,n_admitted,1.0,
+B1_selfupdate,updates per session vs user drift,,
+B1c_labels_only,n_updates,0.5160706201901313,
+B1c_labels_only,n_admitted,0.5029425079221367,
+B1c_labels_only,updates per session vs user drift,,0.27377990561789334
+B2c_DP_labels_only,n_updates,0.5142598460842009,
+B2c_DP_labels_only,n_admitted,0.5002263467632413,
+B2c_DP_labels_only,updates per session vs user drift,,0.28867513459481287
+B3_gate_nonDP,n_updates,0.6602535083748302,
+B3_gate_nonDP,n_admitted,0.6548211860570394,
+B3_gate_nonDP,updates per session vs user drift,,
+P_gate_DP_budget,n_updates,0.7926663648709823,
+P_gate_DP_budget,n_admitted,0.6367134449977365,
+P_gate_DP_budget,updates per session vs user drift,,

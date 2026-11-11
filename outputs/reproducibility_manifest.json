@@ -1,0 +1,167 @@
+{
+ "generated_utc": "2026-11-10T23:19:43.320012+00:00",
+ "versions": {
+  "python": "3.13.18",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "scipy": "1.18.1",
+  "matplotlib": "3.11.2",
+  "scikit-learn": "1.9.1",
+  "dp-accounting": "0.7.0",
+  "platform": "Linux-6.18.44-fc-v338-x86_64-with-glibc2.39"
+ },
+ "downloads": [
+  {
+   "key": "cmu_mirrorA",
+   "url": "https://raw.githubusercontent.com/rehassachdeva/Anomaly-Detection-for-Keystroke-Dynamics/2a43e09645cfd7823f33768617f3343265d05a49/DSL-StrongPasswordData.csv",
+   "file": "DSL-StrongPasswordData.csv",
+   "bytes": 4669935,
+   "sha256": "b11d23538b1865fa6ecf4e8b78567caa312e9c1027604bb022fcc6ad7eaa7a33",
+   "expected": "b11d23538b1865fa6ecf4e8b78567caa312e9c1027604bb022fcc6ad7eaa7a33",
+   "ok": true
+  },
+  {
+   "key": "cmu_mirrorB",
+   "url": "https://raw.githubusercontent.com/LesCadets/keystroke-dynamics-benchmark-dataset/acf5f5558653a409ea1f3785905fe0c4fdd2bdd1/data/StrongPasswordData.csv",
+   "file": "StrongPasswordData_mirrorB.csv",
+   "bytes": 4649534,
+   "sha256": "38612f33475c8f8ca63ba2fe2c8e6a17a683840eb64721c5ad8b5636ec0fa36e",
+   "expected": "38612f33475c8f8ca63ba2fe2c8e6a17a683840eb64721c5ad8b5636ec0fa36e",
+   "ok": true
+  },
+  {
+   "key": "touch_feat",
+   "url": "https://raw.githubusercontent.com/thalevi/Touchalytics-Deep-Learning/0d52b05db24d169e0a4d9c3bf231e02eddf44081/data/featMat.csv",
+   "file": "touchalytics_featMat.csv",
+   "bytes": 4362187,
+   "sha256": "75da9d7bb6d9b30066b1bf9b36f3cadd7d09a809235d9a36d24a383ed64713f9",
+   "expected": "75da9d7bb6d9b30066b1bf9b36f3cadd7d09a809235d9a36d24a383ed64713f9",
+   "ok": true
+  },
+  {
+   "key": "touch_raw",
+   "url": "https://raw.githubusercontent.com/thalevi/Touchalytics-Deep-Learning/0d52b05db24d169e0a4d9c3bf231e02eddf44081/data/data.csv",
+   "file": "touchalytics_raw.csv",
+   "bytes": 50118664,
+   "sha256": "091e5b75f206a0a1706655e0442199c8e66b6643f55762412ae1fa4faf5dce06",
+   "expected": "091e5b75f206a0a1706655e0442199c8e66b6643f55762412ae1fa4faf5dce06",
+   "ok": true
+  }
+ ],
+ "official_cmu_host": "unreachable from this environment (URLError)",
+ "data_audit": {
+  "cmu": {
+   "rows": 20400,
+   "subjects": 51,
+   "sessions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "reps_per_session": 50,
+   "missing": 0,
+   "duplicate_rows": 0,
+   "duplicate_feature_vectors": 0,
+   "n_features": 31,
+   "negative_UD_values": 22118,
+   "mirrors_identical": true,
+   "scaled_manhattan_replication_EER": 0.09611764705882353
+  },
+  "touchalytics": {
+   "users": 41,
+   "features": 31,
+   "stroke_rows_dropped_nonnumeric_or_nan": 311,
+   "window_strokes": 5,
+   "users_with_followup_ge_1day": 16,
+   "followup_days_min": 3.404676863425926,
+   "followup_days_max": 11.952338819444444,
+   "windows_per_user_median": 85.0
+  }
+ },
+ "config": {
+  "n_enroll": 40,
+  "n_cal": 10,
+  "n_bg": 50,
+  "q": 0.2,
+  "sigma": 3.0,
+  "clip": 1.0,
+  "delta": 1e-05,
+  "lr": 0.05,
+  "l2": 0.001,
+  "init_steps": 150,
+  "upd_steps": 25,
+  "buffer_cap": 100,
+  "W": 10,
+  "tau_acc": 0.5,
+  "tau_upd": 0.8,
+  "rho": 0.8,
+  "m_min": 5,
+  "trust_q": 0.95,
+  "eps_budget": 8.0,
+  "burst": 10,
+  "attack_holdout": 0.3,
+  "p_gen_pass": 1.0,
+  "p_att_pass": 0.0,
+  "recal_verified": 20,
+  "adapt_step_up": 0.15,
+  "adapt_step_down": 0.1,
+  "n_leak": 5,
+  "probe_per_subject": 20
+ },
+ "seeds": {
+  "main": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "sensitivity": [
+   0,
+   1
+  ],
+  "pilot_excluded": 999
+ },
+ "outputs": [
+  "aggregate_metrics_ci.csv",
+  "attack_gain_ci.csv",
+  "checkpoints_main.csv",
+  "data_audit.json",
+  "download_log.csv",
+  "efficiency.csv",
+  "exploratory_tests_other_attacks.csv",
+  "figures",
+  "hypothesis_tests.csv",
+  "mia_tests.csv",
+  "preregistration.json",
+  "privacy_accounting_table.csv",
+  "reproducibility_manifest.json",
+  "results_mia.csv",
+  "results_per_run_main.csv",
+  "results_sensitivity.csv",
+  "results_tau_sweep.csv",
+  "results_touchalytics.csv",
+  "revision",
+  "sensitivity_summary.csv",
+  "touchalytics_aggregate_ci.csv",
+  "touchalytics_attack_gain_ci.csv",
+  "touchalytics_tests.csv"
+ ],
+ "figures": [
+  "fig1_drift_eda.png",
+  "fig2_attack_trace.png",
+  "fig3_drift_tracking.png",
+  "fig4_attack_gain.png",
+  "fig5_tradeoff.png",
+  "fig6_privacy_sensitivity.png",
+  "fig7_touchalytics.png",
+  "fig8_mia.png",
+  "revision"
+ ],
+ "resume": "Set PACA_ROOT to a writable folder and run all cells; set PACA_FORCE=1 to recompute cached CSVs. To use another dataset, build {subject: dict(X_raw=array, sess=array)} with chronological order and call run_grid()."
+}
